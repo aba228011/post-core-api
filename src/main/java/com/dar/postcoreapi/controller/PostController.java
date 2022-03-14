@@ -50,4 +50,9 @@ public class PostController {
             return new ResponseEntity<>("Wrong id", HttpStatus.BAD_REQUEST);
         }
     }
+
+    @GetMapping("/check")
+    public ResponseEntity<String> checkController() {
+        return new ResponseEntity<>("post-core-api is working", HttpStatus.OK);
+    }
 }
