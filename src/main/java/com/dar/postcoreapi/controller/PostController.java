@@ -3,6 +3,7 @@ package com.dar.postcoreapi.controller;
 import com.dar.postcoreapi.model.PostModel;
 import com.dar.postcoreapi.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -51,8 +52,11 @@ public class PostController {
         }
     }
 
+    @Autowired
+    Environment env;
+
     @GetMapping("/check")
-    public ResponseEntity<String> checkController() {
-        return new ResponseEntity<>("post-core-api is working", HttpStatus.OK);
+    public String checkController() {
+        return "employee-core-api is working at " + env.getProperty("local.server.port");
     }
 }
