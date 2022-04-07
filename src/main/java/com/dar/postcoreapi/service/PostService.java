@@ -15,9 +15,9 @@ public class PostService implements IPostService {
 
     static {
         PostModel postModel1 = new PostModel(
-                UUID.randomUUID().toString(),
+                "post1",
                 "client1",
-                UUID.randomUUID().toString(),
+                "client3",
                 "Письмо", "Отправлено");
         PostModel postModel2 = new PostModel(
                 UUID.randomUUID().toString(),
