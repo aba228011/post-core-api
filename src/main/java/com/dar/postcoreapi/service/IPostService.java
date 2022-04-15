@@ -1,19 +1,20 @@
 package com.dar.postcoreapi.service;
 
-import com.dar.postcoreapi.model.PostModel;
+import com.dar.postcoreapi.model.PostRequest;
+import com.dar.postcoreapi.model.PostResponse;
 
 import java.util.List;
 
 public interface IPostService {
-    PostModel sendPost(PostModel postModel);
+    PostResponse sendPost(PostRequest postRequest);
 
-    PostModel updatePost(String postId, PostModel postModel);
+    PostResponse updatePost(PostRequest postRequest);
 
-    List<PostModel> getAllPosts();
+    List<PostResponse> getAllPosts();
 
-    PostModel getPostById(String postId);
+    PostResponse getPostById(String postId);
 
-    List<PostModel> getPostByClientId(String clientId);
+//    List<PostResponse> getPostByClientId(String clientId);
 
-    boolean deletePostById(String postId);
+    void deletePostById(String postId);
 }
