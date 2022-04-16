@@ -1,6 +1,5 @@
 package com.dar.postcoreapi.controller;
 
-import com.dar.postcoreapi.model.PostModel;
 import com.dar.postcoreapi.model.PostRequest;
 import com.dar.postcoreapi.model.PostResponse;
 import com.dar.postcoreapi.service.PostService;
@@ -32,7 +31,7 @@ public class PostController {
     }
 
     @PutMapping
-    public PostResponse updatePost(@Valid @RequestParam PostRequest postRequest) {
+    public PostResponse updatePost(@Valid @RequestBody PostRequest postRequest) {
         return postService.updatePost(postRequest);
     }
 

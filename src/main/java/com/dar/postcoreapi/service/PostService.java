@@ -39,8 +39,8 @@ public class PostService implements IPostService {
     public PostResponse updatePost(PostRequest postRequest) {
         PostEntity postEntity = modelMapper.map(postRequest, PostEntity.class);
 
-        PostEntity dbEntity = postRepository.getPostEntityByPostId(postRequest.getPostId());
-        postEntity.setId(dbEntity.getId());
+        PostEntity findPost = postRepository.getPostEntityByPostId(postRequest.getPostId());
+        postEntity.setId(findPost.getId());
 
         postEntity = postRepository.save(postEntity);
 

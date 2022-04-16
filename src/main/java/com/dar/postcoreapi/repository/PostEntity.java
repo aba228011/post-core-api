@@ -17,9 +17,9 @@ public class PostEntity {
     private long id;
     @Column(nullable = true, unique = true, length = 50)
     private String postId;
-    @Column(nullable = true, unique = true, length = 50)
+    @Column(nullable = true, unique = false, length = 50)
     private String clientId;
-    @Column(nullable = true, unique = true, length = 50)
+    @Column(nullable = true, unique = false, length = 50)
     private String postRecipientId;
     @Column(nullable = false)
     private String postItem;
